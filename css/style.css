@@ -222,15 +222,15 @@ button {  width: auto; overflow: visible; }
  */
 
 body {
-  background: #222;
-  color: #EFEFEF;
+  background: #efefef;
+  color: #333;
 }
 a {
   color: #fff;
 }
 p {
   margin: 24px 0;
-  color: #ccc;
+  color: #333;
 }
 .right {
   float: right;
@@ -251,13 +251,19 @@ header, footer {
   position: fixed;
   width: 100%;
   z-index: 3;
+  -moz-box-shadow: 0px 0px 8px #333;
+  -webkit-box-shadow: 0px 0px 8px #333;
+  box-shadow: 0px 0px 8px #333;
+  
+  /* TEMPORARY */
+  min-width: 1000px;
+}
+header p, footer p {
+  color: #ccc;
 }
 header {
   top: -150px;
   height: 178px;
-  -moz-box-shadow: 0px 0px 4px #111;
-  -webkit-box-shadow: 0px 0px 4px #111;
-  box-shadow: 0px 0px 4px #111;
 }
 footer {
   bottom: -150px;
@@ -298,7 +304,7 @@ footer li a, footer li a:visited,
   display: block;
   height: 18px;
   padding: 0px 8px;
-  margin: 5px 6px;
+  margin: 5px 5px;
   text-decoration: none;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -346,13 +352,17 @@ a#logout:hover {
   overflow: hidden;
   height: auto !important;
   min-height:650px;
+
+  /* TEMPORARY */
+  min-width: 1000px;
 }
 #content .col {
-  padding: 14px;
+  padding: 24px 34px;
 
   /* TEMPORARY */
   text-align: center;
-  margin: 0 40px;
+  border-right: 1px solid #ccc;
+  height: 650px;
 }
 #main table {
 }
@@ -362,6 +372,9 @@ a#logout:hover {
   bottom: -72px;
   width: 100%; 
   background: #555;
+  -moz-box-shadow: 0px 0px 6px #333;
+  -webkit-box-shadow: 0px 0px 6px #333;
+  box-shadow: 0px 0px 6px #333;
 }
 #main .meta .bar {
   width:100%;
