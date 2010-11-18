@@ -62,7 +62,7 @@ abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
 /* tables still need cellspacing="0" in the markup */
 table { border-collapse:collapse; border-spacing:0; }
 
-hr { display:block; height:1px; border:0; border-top:1px solid #666; margin:1em 0; padding:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #666; margin:0.7em 0; padding:0; }
 
 input, select { vertical-align:middle; }
 
@@ -229,8 +229,11 @@ a {
   color: #fff;
 }
 p {
-  margin: 24px 0;
+  margin: 12px 0;
   color: #333;
+}
+.left {
+  float:left;
 }
 .right {
   float: right;
@@ -244,6 +247,18 @@ a.button {
   display: block;
   -moz-border-radius: 14px !important;
   border-radius: 14px !important;
+  font-weight: bold;
+}
+.green {
+  color: #070;
+}
+.yellow {
+  color: #c70;
+}
+.red {
+  color: #700;
+}
+.bold {
   font-weight: bold;
 }
 header, footer {
@@ -309,17 +324,14 @@ footer li a, footer li a:visited,
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-header li a.new, header li a.new:visited {
-  color: #6bf;
+header li a:hover,
+header li a.active {
+  color:#6bf;
 }
-header li a:hover, footer li a:hover,
-header li a.active, footer li a.active {
+footer li a:hover,
+footer li a.active {
   color: #000;
-  background: #eee;
-}
-header li a.new:hover {
-  color: #000;
-  background: #6bf;
+  background: #ddd;
 }
 header input {
   margin: 3px 2px;
@@ -357,15 +369,64 @@ a#logout:hover {
   min-width: 1000px;
 }
 #content .col {
-  padding: 24px 34px;
+  padding: 6px 12px;
 
   /* TEMPORARY */
   text-align: center;
   border-right: 1px solid #ccc;
   height: 650px;
 }
-#main table {
+.head {
+  margin-top: 18px;
+  margin-bottom: 1.1em;
 }
+.head hr {
+  margin-bottom: 0px;
+}
+.head a {
+  text-decoration: none;
+}
+.head a:hover {
+  text-decoration: underline;
+}
+.tuck {
+  width:100%;
+  font-size:0.8em;
+}
+.tuck .create, .tuck .inbox, .tuck .markall, .tuck .pipe {
+  float: right;
+}
+.tuck .pipe {
+  color: #aaa;
+  margin: 0 3px;
+}
+.list {
+  text-align: left;
+}
+.list .project, .list .wave {
+  padding: 4px 0;
+  border-bottom:1px solid #ccc;
+}
+.list .project:hover, .list .wave:hover {
+  background: #e3e3e3;
+}
+.list .date, .list .author {
+  float:right;
+  color:#aaa;
+  font-weight:normal;
+}
+.project:hover .date, .wave:hover .date, .wave:hover .author {
+  color: #333;
+}
+.list h4 {
+  font-weight: normal;
+  clear:left;
+}
+.list .poll span {
+  margin-right: 12px;
+}
+
+
 #main .meta {
   height: 128px;
   position: fixed;
