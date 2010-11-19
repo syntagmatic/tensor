@@ -225,9 +225,6 @@ body {
   background: #efefef;
   color: #333;
 }
-a {
-  color: #fff;
-}
 p {
   margin: 12px 0;
   color: #333;
@@ -315,7 +312,7 @@ header li a, header li a:visited,
 footer li a, footer li a:visited,  
 .meta li a, .meta li a:visited  {
   font-weight: bold;
-  color: #f9f9f9;
+  color: #ccc;
   display: block;
   height: 18px;
   padding: 0px 8px;
@@ -331,7 +328,7 @@ header li a.active {
 footer li a:hover,
 footer li a.active {
   color: #000;
-  background: #ddd;
+  background: #ccc;
 }
 header input {
   margin: 3px 2px;
@@ -378,7 +375,7 @@ a#logout:hover {
 }
 .head {
   margin-top: 18px;
-  margin-bottom: 1.1em;
+  margin-bottom: 1.2em;
 }
 .head hr {
   margin-bottom: 0px;
@@ -403,12 +400,16 @@ a#logout:hover {
 .list {
   text-align: left;
 }
+.list .selected {
+  background: #d7d7d7;
+  color: #000;
+}
 .list .project, .list .wave {
   padding: 4px 0;
   border-bottom:1px solid #ccc;
 }
 .list .project:hover, .list .wave:hover {
-  background: #e3e3e3;
+  background: #ffe6a3;
 }
 .list .date, .list .author {
   float:right;
@@ -422,7 +423,7 @@ a#logout:hover {
   font-weight: normal;
   clear:left;
 }
-.list .poll span {
+.list .tally span {
   margin-right: 12px;
 }
 
