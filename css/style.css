@@ -255,9 +255,6 @@ a.button {
 .red {
   color: #700;
 }
-.bold {
-  font-weight: bold;
-}
 header, footer {
   background: #333;
   position: fixed;
@@ -376,6 +373,9 @@ a#logout:hover {
   border-left: 1px solid #b8b8b8;
   min-height: 770px;
 }
+#list-2, #list-3 {
+  display:none;
+}
 #content .colDragger {
   height:auto;
   width:3px;
@@ -420,16 +420,24 @@ a#logout:hover {
   border-bottom:1px dotted #d3d3d3;
   position:relative;
 }
+.wave h3 {
+  font-weight: normal;
+}
+.wave.new h3 {
+  font-weight: bold;
+}
+.wave.new .bold {
+  font-weight: bold;
+}
 .grey {
-  color: #777;
+  color: #999;
 }
 #content .selected {
   background: #fff;
   color: #000;
-  margin:-1px 0 0 -6px !important;
-  padding: 4px 12px 4px 12px !important;
+  margin:0px -7px 0 -1px !important;
+  padding: 5px 12px 5px 12px !important;
   z-index:2;
-  left:1px;
   border-left:1px solid #b8b8b8;
   border-top:1px solid #b8b8b8;
   border-bottom:1px solid #b8b8b8;
