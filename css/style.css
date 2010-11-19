@@ -222,7 +222,7 @@ button {  width: auto; overflow: visible; }
  */
 
 body {
-  background: #efefef;
+  background: #eaeaea;
   color: #333;
 }
 p {
@@ -366,7 +366,7 @@ a#logout:hover {
   min-width: 1000px;
 }
 #content .col {
-  padding: 6px 12px;
+  padding: 6px 0px;
 
   /* TEMPORARY */
   text-align: center;
@@ -400,16 +400,43 @@ a#logout:hover {
 .list {
   text-align: left;
 }
-.list .selected {
-  background: #d7d7d7;
-  color: #000;
-}
 .list .project, .list .wave {
   padding: 4px 0;
+  margin: 0 12px;
   border-bottom:1px solid #ccc;
+  position:relative;
+}
+#leftcol .selected {
+  background: #d6eaff;
+  -moz-box-shadow: -4px 0px 8px #aaa;
+  -webkit-box-shadow: -4px 0px 8px #aaa;
+  box-shadow: -4px 0px 8px #aaa;
+  border-bottom: 1px solid #999;
+  color: #000;
+  margin: 0px;
+  padding: 4px 12px 4px 12px;
+  z-index:2;
+  left:1px;
+}
+#midcol .selected {
+  background: #ffead0;
+  -moz-box-shadow: -4px 0px 8px #aaa;
+  -webkit-box-shadow: -4px 0px 8px #aaa;
+  box-shadow: -4px 0px 8px #aaa;
+  border-bottom: 1px solid #999;
+  color: #000;
+  margin: 0px;
+  padding: 4px 12px 4px 12px;
+  z-index:2;
+  left:1px;
+}
+#rightcol {
+  background: #ffead0;
 }
 .list .project:hover, .list .wave:hover {
   background: #ffe6a3;
+  margin: 0px;
+  padding: 4px 12px;
 }
 .list .date, .list .author {
   float:right;
@@ -506,7 +533,10 @@ a#logout:hover {
 footer ul {
   float: right;
 }
-
+#midcol .waves {
+  /* TEMPORARY */
+  background: #d6e9ff;
+}
 
 
 
