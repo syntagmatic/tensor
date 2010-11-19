@@ -64,5 +64,16 @@ $(function() {
       });
   });
 
+  $('.wave').click( function() {
+    var list = $(this).parent();
+    var selected = list + ' .selected';
+      
+    list.addClass('grey');
+    $(this).addClass('selected');
+    var height = $(this).height();
+    $(this).css('position', 'absolute').animate({top: -height});
+    list.animate({top: height});
+  });
+
 });
 

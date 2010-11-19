@@ -336,7 +336,7 @@ header input {
   width: 200px;
   height: 18px;
   border: none;
-  background: #ccc;
+  background:#efefef;
   -moz-border-radius: 9px;
   -webkit-border-radius: 9px;
   border-radius: 9px;
@@ -365,22 +365,33 @@ a#logout:hover {
   /* TEMPORARY */
   min-width: 1000px;
 }
+#content:hover {
+  cursor:-moz-grab;
+}
+#content:active {
+  cursor:-moz-grabbing;
+}
 #content .col {
-  padding: 6px 0px;
-
   /* TEMPORARY */
-  text-align: center;
-  border-right: 1px solid #c3c3c3;
-  margin-right: 3px;
-  border-left: 1px solid #c3c3c3;
-  height: 650px;
+  border-left: 1px solid #b8b8b8;
+  min-height: 770px;
+}
+#content .colDragger {
+  height:auto;
+  width:3px;
+  border-left:1px solid #c3c3c3;
+  background:#e6e6e6;
+  min-height:770px;
+  cursor:col-resize;
 }
 .head {
-  margin-top: 18px;
-  margin-bottom: 1.2em;
+  padding:10px;
+  background:#efefef;
+ background: -moz-linear-gradient(top, #EFEFEF 0%, #DDDDDD 100%); /* firefox */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EFEFEF), color-stop(100%,#DDDDDD)); /* webkit */
 }
-.head hr {
-  margin-bottom: 0px;
+.head h2 {
+  font-size:14px;
 }
 .head a {
   text-decoration: none;
@@ -389,8 +400,8 @@ a#logout:hover {
   text-decoration: underline;
 }
 .tuck {
-  width:100%;
-  font-size:0.8em;
+  float:right;
+  font-size:11px;
 }
 .tuck .create, .tuck .inbox, .tuck .markall, .tuck .pipe {
   float: right;
@@ -401,41 +412,40 @@ a#logout:hover {
 }
 .list {
   text-align: left;
-}
-.list .project, .list .wave {
-  padding: 4px 0;
-  margin: 0 12px;
-  border-bottom:1px solid #c3c3c3;
   position:relative;
 }
-#leftcol .selected {
-  background: #efefef;
-  -moz-box-shadow: -6px 0px 8px #999;
-  -webkit-box-shadow: -6px 0px 8px #aaa;
-  box-shadow: -6px 0px 8px #aaa;
-  border-bottom: 1px solid #888;
-  color: #000;
-  margin: 0 0 0 7px;
-  padding: 4px 12px 4px 12px;
-  z-index:2;
-  left:5px;
+.list .wave {
+  padding: 6px 0;
+  margin: 0 12px;
+  border-bottom:1px dotted #d3d3d3;
+  position:relative;
 }
-#midcol .selected {
-  background: #efefef;
-  -moz-box-shadow: -6px 0px 8px #999;
-  -webkit-box-shadow: -6px 0px 8px #aaa;
-  box-shadow: -6px 0px 8px #aaa;
-  border-bottom: 1px solid #888;
-  color: #000;
-  margin: 0 0 0 7px;
-  padding: 4px 12px 4px 12px;
-  z-index:2;
-  left:5px;
+.grey {
+  color: #777;
 }
-.list .project:hover, .list .wave:hover {
+#content .selected {
+  background: #fff;
+  color: #000;
+  margin:-1px 0 0 -6px !important;
+  padding: 4px 12px 4px 12px !important;
+  z-index:2;
+  left:1px;
+  border-left:1px solid #b8b8b8;
+  border-top:1px solid #b8b8b8;
+  border-bottom:1px solid #b8b8b8;
+}
+#content .list .project:hover,
+#content .list .wave:hover {
   background: #ffe6a3;
+  color: #333;
   margin: 0px;
-  padding: 4px 12px;
+  padding: 6px 12px;
+  cursor:pointer;
+}
+#content .list .project.selected:hover,
+#content .list .wave.selected:hover {
+  background: #efefef;
+  cursor:auto;
 }
 .list .date, .list .author {
   float:right;
