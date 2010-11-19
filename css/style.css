@@ -222,7 +222,7 @@ button {  width: auto; overflow: visible; }
  */
 
 body {
-  background: #eaeaea;
+  background: #efefef;
   color: #333;
 }
 p {
@@ -370,7 +370,7 @@ a#logout:hover {
 
   /* TEMPORARY */
   text-align: center;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #c3c3c3;
   height: 650px;
 }
 .head {
@@ -403,15 +403,15 @@ a#logout:hover {
 .list .project, .list .wave {
   padding: 4px 0;
   margin: 0 12px;
-  border-bottom:1px solid #ccc;
+  border-bottom:1px solid #c3c3c3;
   position:relative;
 }
 #leftcol .selected {
-  background: #d6eaff;
-  -moz-box-shadow: -4px 0px 8px #aaa;
-  -webkit-box-shadow: -4px 0px 8px #aaa;
-  box-shadow: -4px 0px 8px #aaa;
-  border-bottom: 1px solid #999;
+  background: #efefef;
+  -moz-box-shadow: -6px 0px 8px #999;
+  -webkit-box-shadow: -6px 0px 8px #aaa;
+  box-shadow: -6px 0px 8px #aaa;
+  border-bottom: 1px solid #888;
   color: #000;
   margin: 0px;
   padding: 4px 12px 4px 12px;
@@ -419,19 +419,16 @@ a#logout:hover {
   left:1px;
 }
 #midcol .selected {
-  background: #ffead0;
-  -moz-box-shadow: -4px 0px 8px #aaa;
-  -webkit-box-shadow: -4px 0px 8px #aaa;
-  box-shadow: -4px 0px 8px #aaa;
-  border-bottom: 1px solid #999;
+  background: #efefef;
+  -moz-box-shadow: -6px 0px 8px #999;
+  -webkit-box-shadow: -6px 0px 8px #aaa;
+  box-shadow: -6px 0px 8px #aaa;
+  border-bottom: 1px solid #888;
   color: #000;
   margin: 0px;
   padding: 4px 12px 4px 12px;
   z-index:2;
   left:1px;
-}
-#rightcol {
-  background: #ffead0;
 }
 .list .project:hover, .list .wave:hover {
   background: #ffe6a3;
@@ -511,7 +508,7 @@ a#logout:hover {
   width: 170px;
   height: 18px;
   border: none;
-  background: #ccc;
+  background: #c3c3c3;
 }
 #nav #contacts ul {
   width: 180px;
@@ -532,10 +529,6 @@ a#logout:hover {
   }
 footer ul {
   float: right;
-}
-#midcol .waves {
-  /* TEMPORARY */
-  background: #d6e9ff;
 }
 
 
