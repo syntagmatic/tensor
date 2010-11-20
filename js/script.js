@@ -22,7 +22,48 @@
 
 $(function() {
 
+  var deselect = function(nextlist, list, selected) {
+    nextlist.fadeOut();
+    list.removeClass('grey');
+    selected.removeClass('selected');
+  }
+  var select = function(nextlist, list, selected, item) {
+    nextlist.fadeIn(235);
+    list.addClass('grey');
+    selected.removeClass('selected'); 
+    item.addClass('selected');
+  }
+  var reload = function(nextlist, nextnextlist, selected, item) {
+    nextnextlist.fadeOut(300);
+    selected.removeClass('selected'); 
+    item.addClass('selected');
+    nextlist.fadeOut(300, function() {
+      nextlist.children('.selected').removeClass('selected');
+      nextlist.removeClass('grey');
+      // Change content here 
+    } );
+    nextlist.fadeIn();
+  }
+  var shiftleft = function(col, nextlist) {
+    nextcol  = nextlist.parent();
+    colwidth = col.width();
+    $('#leftcol').attr('id', '');
+    $('#midcol').attr('id', 'leftcol');
+    $('#rightcol').attr('id', 'midcol');
+    nextcol.attr('id', 'rightcol');
+    $('#content').animate({left : '-=' + colwidth}, 340);
+  }
+  var shiftright = function(col, prevlist) {
+    prevcol  = prevlist.parent();
+    colwidth = col.width();
+    $('#rightcol').attr('id', '');
+    $('#midcol').attr('id', 'rightcol');
+    $('#leftcol').attr('id', 'midcol');
+    prevcol.attr('id', 'leftcol');
+    $('#content').animate({left : '+=' + colwidth}, 340);
+  }
   // Header pulldown
+  // TODO: Abstract this code to keep things DRY
   var headspace = 0;
   $('header a').toggle(
     function() {
@@ -99,36 +140,54 @@ $(function() {
     col      = list.parent();
     selected = list.children('.selected');
 
-    num      = list.attr('id').substring(5);
-    nextnum  = ++num;
-    nextlist = $('#list-' + nextnum);
-    
-    nextcol  = nextlist.parent();
+    numlist  = parseInt(list.attr('id').substring(5));
 
-    /* TEMPORARY */
-    if ( $('#hello').is(':visible') ) {
-      $('#hello').hide();
-    }
-      
-    if ( $(this).hasClass('selected') ) {
-      list.removeClass('grey');
-      selected.removeClass('selected'); 
-    }
-    else {
-      nextlist.fadeIn(235);
-      list.addClass('grey');
-      selected.removeClass('selected'); 
-      $(this).addClass('selected');
+    nextnum  =  numlist + 1;
+    nextlist = $('#list-' + nextnum);
+    nextnextnum =  numlist + 2;
+    nextnextlist = $('#list-' + nextnextnum);
+    
+    if ( numlist > 1 ) {
+      prevnum  = numlist - 1;
+      prevlist = $('#list-' + prevnum);
+      if ( numlist > 2 ) {
+        prevprevnum  = numlist - 2;
+        prevprevlist = $('#list-' + prevprevnum);
+      }
     }
 
     if ( col.attr('id') == 'rightcol' ) {
-      colwidth = col.width();
-      $('#leftcol').attr('id', '');
-      $('#midcol').attr('id', 'leftcol');
-      $('#rightcol').attr('id', 'midcol');
-      nextcol.attr('id', 'rightcol');
-      $('#content').animate({left : '-=' + colwidth}, 340);
+      shiftleft(col, nextlist);
+      select(nextlist, list, selected, $(this));
     }
+    else if ( col.attr('id') == 'midcol' ) {
+      if ( $(this).hasClass('selected') ) {
+        deselect(nextlist, list, selected);
+        if ( numlist > 2) {
+          shiftright(col, prevprevlist);
+        }
+      } else if ( list.children().hasClass('selected') ) {
+        reload(nextlist, nextnextlist, selected, $(this));
+      } else {
+        select(nextlist, list, selected, $(this));
+      }
+    }
+    else if ( col.attr('id') == 'leftcol' ) {
+      if ( $(this).hasClass('selected') ) {
+        deselect(nextlist, list, selected);
+        if ( numlist > 1) {
+          shiftright(col, prevlist);
+        }
+      } else if ( list.children().hasClass('selected') ) {
+        reload(nextlist, nextnextlist, selected, $(this));
+        if ( numlist > 1) {
+          shiftright(col, prevlist);
+        }
+      } else {
+        select(nextlist, list, selected, $(this));
+      }
+    }
+
 
   });
 
