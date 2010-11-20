@@ -22,7 +22,8 @@
 
 $(function() {
 
-  var deselect = function(nextlist, list, selected) {
+  var deselect = function(nextlist, nextnextlist, list, selected) {
+    nextnextlist.fadeOut();
     nextlist.fadeOut();
     list.removeClass('grey');
     selected.removeClass('selected');
@@ -162,7 +163,7 @@ $(function() {
     }
     else if ( col.attr('id') == 'midcol' ) {
       if ( $(this).hasClass('selected') ) {
-        deselect(nextlist, list, selected);
+        deselect(nextlist, nextnextlist, list, selected);
         if ( numlist > 2) {
           shiftright(col, prevprevlist);
         }
@@ -174,7 +175,7 @@ $(function() {
     }
     else if ( col.attr('id') == 'leftcol' ) {
       if ( $(this).hasClass('selected') ) {
-        deselect(nextlist, list, selected);
+        deselect(nextlist, nextnextlist, list, selected);
         if ( numlist > 1) {
           shiftright(col, prevlist);
         }
