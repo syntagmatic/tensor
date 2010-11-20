@@ -1,6 +1,6 @@
 /* Author: Kai Chang
-
-*/
+ * Copyright: 2010
+  */
 
 $(function() {
 
@@ -77,21 +77,39 @@ $(function() {
   });
 
   $('.wave').click( function() {
-    var list = $(this).parent();
-    var num = list.attr('id').substring(5);
-    var nextnum = ++num;
-    var nextlist = $('#list-' + nextnum);
-    var selected = list.children('.selected');
+    list     = $(this).parent();
+    col      = list.parent();
+    selected = list.children('.selected');
+
+    num      = list.attr('id').substring(5);
+    nextnum  = ++num;
+    nextlist = $('#list-' + nextnum);
+    
+    nextcol  = nextlist.parent();
+
+    /* TEMPORARY */
+    if ( $('#hello').is(':visible') ) {
+      $('#hello').hide();
+    }
       
-    if ($(this).hasClass('selected')) {
+    if ( $(this).hasClass('selected') ) {
       list.removeClass('grey');
       selected.removeClass('selected'); 
     }
     else {
-      nextlist.fadeIn();
+      nextlist.fadeIn(235);
       list.addClass('grey');
       selected.removeClass('selected'); 
       $(this).addClass('selected');
+    }
+
+    if ( col.attr('id') == 'rightcol' ) {
+      colwidth = col.width();
+      $('#leftcol').attr('id', '');
+      $('#midcol').attr('id', 'leftcol');
+      $('#rightcol').attr('id', 'midcol');
+      nextcol.attr('id', 'rightcol');
+      $('#content').animate({left : '-=' + colwidth}, 340);
     }
 
   });

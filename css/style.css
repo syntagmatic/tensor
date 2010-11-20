@@ -1,3 +1,8 @@
+/*
+ * Author: Kai Chang and Mary Becica
+ * Copyright: 2010
+ */
+
 /* 
   HTML5 ✰ Boilerplate 
   
@@ -279,12 +284,14 @@ footer {
   padding-bottom: 150px;
   height: 28px;
 }
-/* .inner {
-  width: 980px;
+ .inner {
+  width: 100%;
+  overflow: hidden;
   position: relative;
-  left: 50%;
-  margin-left: -490px;
-} */
+
+  /* TEMPORARY */
+  min-width: 1000px;
+} 
 .outer {
   width: 100%;
   height: 150px;
@@ -353,14 +360,32 @@ a#logout:hover {
   margin: 28px 0px;
   height: 100%;
 }
+#hello {
+  position:absolute;
+  top:100px;
+  left:50%;
+  margin-left:-140px;
+  width:280px;
+  z-index:8;
+}
+#hello a {
+  color: #305890;
+  text-decoration: none;
+}
+#hello a:hover {
+  color: #fff;
+  background: #607890;
+}
+#hello p {
+  margin: 20px 0;
+}
 #content {
   margin: 0px;
   overflow: hidden;
   height: auto !important;
   min-height:650px;
-
-  /* TEMPORARY */
-  min-width: 1000px;
+  width: 200%;
+  position:relative;
 }
 #content:hover {
   cursor:-moz-grab;
@@ -369,12 +394,19 @@ a#logout:hover {
   cursor:-moz-grabbing;
 }
 #content .col {
+  float:left;
+  height: auto;
+  width:16.61%;
+  position:relative;
   /* TEMPORARY */
   border-left: 1px solid #b8b8b8;
   min-height: 770px;
 }
-#list-2, #list-3 {
+.list {
   display:none;
+}
+#list-1 {
+  display:block;
 }
 #content .colDragger {
   height:auto;
@@ -383,6 +415,9 @@ a#logout:hover {
   background:#e6e6e6;
   min-height:770px;
   cursor:col-resize;
+  position:absolute;
+  right:0;
+  z-index:2;
 }
 .head {
   padding:10px;
@@ -481,6 +516,7 @@ a#logout:hover {
   -moz-box-shadow: 0px 0px 6px #333;
   -webkit-box-shadow: 0px 0px 6px #333;
   box-shadow: 0px 0px 6px #333;
+  z-index:3;
 }
 #main .meta .bar {
   width:100%;
