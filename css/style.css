@@ -267,9 +267,7 @@ header, footer {
   -moz-box-shadow: 0px 0px 8px #333;
   -webkit-box-shadow: 0px 0px 8px #333;
   box-shadow: 0px 0px 8px #333;
-  
-  /* TEMPORARY */
-  min-width: 1000px;
+  min-width: 768px;
 }
 header p, footer p {
   color: #ccc;
@@ -287,9 +285,7 @@ footer {
   width: 100%;
   overflow: hidden;
   position: relative;
-
-  /* TEMPORARY */
-  min-width: 1000px;
+  min-width: 768px;
 } 
 .outer {
   width: 100%;
@@ -318,7 +314,7 @@ footer li a, footer li a:visited,
   color: #ccc;
   display: block;
   height: 18px;
-  padding: 0px 8px;
+  padding: 0px 6px;
   margin: 5px 5px;
   text-decoration: none;
   -moz-border-radius: 10px;
@@ -336,7 +332,7 @@ footer li a.active {
 header input {
   margin: 3px 2px;
   padding: 1px 12px;
-  width: 200px;
+  width: 150px;
   height: 18px;
   border: none;
   background:#efefef;
@@ -351,9 +347,6 @@ header .inner p {
   height: 20px;
   padding: 5px 4px 1px 14px;
   margin: 0;
-}
-a#logout:hover {
-  color: #700;
 }
 #main {
   margin: 28px 0px;
@@ -444,6 +437,27 @@ a#logout:hover {
 .wave.new .bold {
   font-weight: bold;
 }
+.wave .tools {
+  height:18px;
+  font-weight:bold;
+  display:none;
+}
+#midcol .selected .tools {
+  display:block;
+}
+.wave .edit, .wave .reply, .wave .view, .wave .history {
+}
+.wave .edit {
+}
+.wave .reply {
+  margin-right:8px;
+}
+.wave .view {
+  margin-right:8px;
+}
+.wave .history {
+  float:right;
+}
 .grey {
   color: #999;
 }
@@ -451,7 +465,7 @@ a#logout:hover {
   background: #fff;
   color: #000;
   margin:0px 3px 0 -1px !important;
-  padding: 5px 12px 5px 12px !important;
+  padding: 5px 9px 5px 12px !important;
   z-index:2;
   border-top:1px solid #b8b8b8;
   border-bottom:1px solid #b8b8b8;
@@ -466,7 +480,6 @@ a#logout:hover {
 }
 #content .list .project.selected:hover,
 #content .list .wave.selected:hover {
-  background: #efefef;
   cursor:auto;
 }
 .list .date, .list .author {

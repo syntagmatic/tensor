@@ -1,5 +1,5 @@
 /*
- * Authors: Kai Chang and Mary Becica
+ * Author: Kai Chang
  * 
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -24,9 +24,12 @@ $(function() {
 
   var deselect = function(nextlist, nextnextlist, list, selected) {
     nextnextlist.fadeOut();
-    nextlist.fadeOut();
     list.removeClass('grey');
     selected.removeClass('selected');
+    nextlist.fadeOut(240, function() {
+      nextlist.removeClass('grey');
+      nextlist.children('.selected').removeClass('selected');
+    });
   }
   var select = function(nextlist, list, selected, item) {
     nextlist.fadeIn(235);
