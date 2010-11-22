@@ -335,19 +335,36 @@ footer li a.active {
   color: #000;
   background: #ccc;
 }
-header input {
+input:focus {
+  border: 2px solid #7F9B4B;
+}
+header input, footer input, .meta input {
   margin: 3px 2px;
   padding: 1px 12px;
-  width: 150px;
-  height: 18px;
   border: none;
-  background:#efefef;
   -moz-border-radius: 9px;
   -webkit-border-radius: 9px;
   border-radius: 9px;
 }
+header input {
+  width: 150px;
+  height: 18px;
+  background:#efefef;
+}
 header input[type="submit"] {
   display: none;
+}
+.meta input {
+  color:#bbb;
+  background:#4d4d4d;
+  width:70px;
+}
+.meta input:hover {
+  color:#333;
+  background:#aaa;
+}
+.meta input:focus  {
+
 }
 header .inner p {
   height: 20px;
@@ -496,9 +513,6 @@ header .inner p {
   z-index:2;
   border-top:1px solid #b8b8b8;
   border-bottom:1px solid #b8b8b8;
-  position:absolute;
-  top:36px;
-  width:100%;
 }
 #content .selected h3, #content .selected h4{
   padding: 0 12px;
@@ -538,7 +552,7 @@ header .inner p {
   position: fixed;
   bottom: -72px;
   width: 100%; 
-  background: #555;
+  background: #4d4d4d;
   -moz-box-shadow: 0px 0px 6px #333;
   -webkit-box-shadow: 0px 0px 6px #333;
   box-shadow: 0px 0px 6px #333;
