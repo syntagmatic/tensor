@@ -25,7 +25,7 @@ $(function() {
   var deselect = function(nextlist, nextnextlist, list, selected) {
     nextnextlist.fadeOut();
     list.removeClass('grey');
-    selected.removeClass('selected');
+//    selected.removeClass('selected');
     nextlist.fadeOut(240, function() {
       nextlist.removeClass('grey');
       nextlist.children('.selected').removeClass('selected');
@@ -35,7 +35,7 @@ $(function() {
     list.addClass('grey');
     selected.removeClass('selected'); 
     item.addClass('selected');
-    $('html').scrollTop(0);
+    $('#container').scrollTop(0);
     nextlist.fadeIn(235);
   }
   var reload = function(nextlist, nextnextlist, selected, item) {

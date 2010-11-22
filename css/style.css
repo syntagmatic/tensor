@@ -222,12 +222,18 @@ button {  width: auto; overflow: visible; }
 
 
  /* Primary Styles
-    Author: Kai Chang
- */
+  *  Authors: Kai Chang and Mary Becica
+  */
 
 body {
   background: #efefef;
   color: #333;
+}
+#container {
+  overflow: auto;
+  top:0;
+  height:100%;
+  width:100%;
 }
 p {
   margin: 12px 0;
@@ -398,8 +404,8 @@ header .inner p {
   background:#efefef;
   background: -moz-linear-gradient(top, #EFEFEF 0%, #DDDDDD 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EFEFEF), color-stop(100%,#DDDDDD));
-  position:fixed;
-  width:33%;
+  position:absolute;
+  width:100%;
   z-index:4;
 }
 .head h2 {
@@ -490,9 +496,9 @@ header .inner p {
   z-index:2;
   border-top:1px solid #b8b8b8;
   border-bottom:1px solid #b8b8b8;
-  position:fixed;
-  top:64px;
-  width:33%;
+  position:absolute;
+  top:36px;
+  width:100%;
 }
 #content .selected h3, #content .selected h4{
   padding: 0 12px;
