@@ -32,10 +32,11 @@ $(function() {
     });
   }
   var select = function(nextlist, list, selected, item) {
-    nextlist.fadeIn(235);
     list.addClass('grey');
     selected.removeClass('selected'); 
     item.addClass('selected');
+    $('html').scrollTop(0);
+    nextlist.fadeIn(235);
   }
   var reload = function(nextlist, nextnextlist, selected, item) {
     nextnextlist.fadeOut(300);
@@ -46,6 +47,7 @@ $(function() {
       nextlist.removeClass('grey');
       // Change content here 
     } );
+    $('html').scrollTop(0);
     nextlist.fadeIn();
   }
   var shiftleft = function(col, nextlist) {

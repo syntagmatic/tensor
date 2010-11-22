@@ -250,20 +250,20 @@ a.button {
   border-radius: 14px !important;
   font-weight: bold;
 }
-.green {
+.green, .wave:hover .green {
   color: #070;
 }
-.yellow {
+.yellow, .wave:hover .yellow {
   color: #c70;
 }
-.red {
+.red, .wave:hover .red {
   color: #700;
 }
 header, footer {
   background: #333;
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 7;
   -moz-box-shadow: 0px 0px 8px #333;
   -webkit-box-shadow: 0px 0px 8px #333;
   box-shadow: 0px 0px 8px #333;
@@ -372,7 +372,6 @@ header .inner p {
   width:16.61%;
   position:relative;
   /* TEMPORARY */
-  border-left: 1px solid #b8b8b8;
   min-height: 770px;
 }
 .list {
@@ -385,21 +384,27 @@ header .inner p {
   height:auto;
   width:3px;
   border-left:1px solid #c3c3c3;
+  border-right: 1px solid #b8b8b8;
   background:#fff;
   min-height:770px;
   cursor:col-resize;
   position:absolute;
   right:0;
-  z-index:2;
+  z-index:5;
 }
 .head {
-  padding:10px;
+  padding:10px 0 ;
+  height:16px;
   background:#efefef;
- background: -moz-linear-gradient(top, #EFEFEF 0%, #DDDDDD 100%); /* firefox */
- background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EFEFEF), color-stop(100%,#DDDDDD)); /* webkit */
+  background: -moz-linear-gradient(top, #EFEFEF 0%, #DDDDDD 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EFEFEF), color-stop(100%,#DDDDDD));
+  position:fixed;
+  width:33%;
+  z-index:4;
 }
 .head h2 {
   font-size:14px;
+  padding:0 9px 0 12px;
 }
 .head a {
   text-decoration: none;
@@ -421,6 +426,7 @@ header .inner p {
 .list {
   text-align: left;
   position:relative;
+  padding-top:36px;
 }
 .list .wave {
   padding: 6px 0;
@@ -441,9 +447,15 @@ header .inner p {
   height:18px;
   font-weight:bold;
   display:none;
+  padding:4px 12px 0;
+}
+.selected .tools {
+  display:block;
+  visibility:hidden;
 }
 #midcol .selected .tools {
   display:block;
+  visibility:visible;
 }
 .wave .edit, .wave .reply, .wave .view, .wave .history {
 }
@@ -459,16 +471,32 @@ header .inner p {
   float:right;
 }
 .grey {
-  color: #999;
+  color: #bbb;
+}
+.grey .green {
+  color: #7CCC7C;
+}
+.grey .yellow {
+  color: #D4B07F;
+}
+.grey .red {
+  color: #B07D7D;
 }
 #content .selected {
   background: #fff;
   color: #000;
-  margin:0px 3px 0 -1px !important;
-  padding: 5px 9px 5px 12px !important;
+  margin:0px 0px 0 0px !important;
+  padding: 5px 0px 5px 0px !important;
   z-index:2;
   border-top:1px solid #b8b8b8;
   border-bottom:1px solid #b8b8b8;
+  position:fixed;
+  top:64px;
+  width:33%;
+}
+#content .selected h3, #content .selected h4{
+  padding: 0 12px;
+  color: #000;
 }
 #content .list .project:hover,
 #content .list .wave:hover {
@@ -508,7 +536,7 @@ header .inner p {
   -moz-box-shadow: 0px 0px 6px #333;
   -webkit-box-shadow: 0px 0px 6px #333;
   box-shadow: 0px 0px 6px #333;
-  z-index:3;
+  z-index:6;
 }
 #main .meta .bar {
   width:100%;
