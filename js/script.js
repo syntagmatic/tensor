@@ -25,7 +25,7 @@ $(function() {
   var deselect = function(nextlist, nextnextlist, list, selected) {
     nextnextlist.fadeOut();
     list.removeClass('grey');
-//    selected.removeClass('selected');
+    selected.removeClass('selected');
     nextlist.fadeOut(240, function() {
       nextlist.removeClass('grey');
       nextlist.children('.selected').removeClass('selected');

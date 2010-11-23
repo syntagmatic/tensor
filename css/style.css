@@ -111,8 +111,8 @@ h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
+a, a:active, a:visited { color: #047; text-decoration: none;}
+a:hover { color: #036; text-decoration:underline;}
 
 
 ul, ol { margin-left: 1.8em; }
@@ -239,6 +239,17 @@ p {
   margin: 12px 0;
   color: #333;
 }
+.entry h1 {
+  font-weight:bold;
+  margin:18px 0 2px 0;
+  font-size:24px;
+  border-bottom:1px solid #d3d3d3;
+  }
+.entry h2 {
+  font-size:18px;
+  margin:18px 0 2px 0;
+  border-bottom:1px solid #d3d3d3;
+}
 .left {
   float:left;
 }
@@ -270,9 +281,9 @@ header, footer {
   position: fixed;
   width: 100%;
   z-index: 7;
-  -moz-box-shadow: 0px 0px 8px #333;
-  -webkit-box-shadow: 0px 0px 8px #333;
-  box-shadow: 0px 0px 8px #333;
+  -moz-box-shadow: 0px 0px 8px #444;
+  -webkit-box-shadow: 0px 0px 8px #444;
+  box-shadow: 0px 0px 8px #444;
   min-width: 768px;
 }
 header p, footer p {
@@ -322,21 +333,22 @@ footer li a, footer li a:visited,
   height: 18px;
   padding: 0px 6px;
   margin: 5px 5px;
-  text-decoration: none;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  text-decoration:none;
 }
 header li a:hover,
 header li a.active {
   color:#6bf;
+  text-decoration:none;
 }
 footer li a:hover,
 footer li a.active {
   color: #000;
   background: #ccc;
+  text-decoration:none;
 }
 input:focus {
-  border: 2px solid #7F9B4B;
 }
 header input, footer input, .meta input {
   margin: 3px 2px;
@@ -359,12 +371,9 @@ header input[type="submit"] {
   background:#4d4d4d;
   width:70px;
 }
-.meta input:hover {
+.meta input:hover, .meta input:focus {
   color:#333;
   background:#aaa;
-}
-.meta input:focus  {
-
 }
 header .inner p {
   height: 20px;
@@ -430,7 +439,6 @@ header .inner p {
   padding:0 9px 0 12px;
 }
 .head a {
-  text-decoration: none;
 }
 .head a:hover {
   text-decoration: underline;
@@ -466,9 +474,16 @@ header .inner p {
 .wave.new .bold {
   font-weight: bold;
 }
+.tools .active a {
+  color:#333;
+}
+.tools a, .tools a:visited {
+}
+.tools a:hover {
+  text-decoration:underline;
+}
 .wave .tools {
   height:18px;
-  font-weight:bold;
   display:none;
   padding:4px 12px 0;
 }
@@ -480,17 +495,17 @@ header .inner p {
   display:block;
   visibility:visible;
 }
-.wave .edit, .wave .reply, .wave .view, .wave .history {
-}
-.wave .edit {
-}
-.wave .reply {
+.view {
   margin-right:8px;
 }
-.wave .view {
+.reply, .discuss {
   margin-right:8px;
 }
-.wave .history {
+.edit {
+  float:right;
+  margin-right:8px;
+}
+.history {
   float:right;
 }
 .grey {
@@ -546,6 +561,44 @@ header .inner p {
   margin-right: 12px;
 }
 
+#main .entry {
+  font-size:14px;
+  padding:1px 28px 28px;
+}
+#main .entry p {
+  line-height:1.5em;
+}
+#main .entry h1 {
+  padding-right:220px;
+}
+.entry .tools {
+  margin-top:28px;
+  float:right;
+}
+.entry .tools .wrap {
+  width:auto;
+}
+.entry .tools .view, .entry .tools .edit, .entry .tools .discuss, .entry .tools .history {
+  padding:0px 8px 0px 1px;
+  font-size:11px;
+  float:none;
+}
+
+/* Wikipedia */
+.entry #siteSub {
+  font-size:11px;
+  padding-bottom:6px;
+}
+.entry .rellink {
+  font-size:11px;
+}
+.entry .editsection {
+  font-size:11px;
+  float:right;
+  font-weight:normal;
+  padding:5px 6px 0 0;
+}
+/* End Wikipedia*/
 
 #main .meta {
   height: 128px;
