@@ -193,10 +193,17 @@ $(function() {
         select(nextlist, list, selected, $(this));
       }
     }
-
-
   });
 
+  $('.inline-count').toggle( function() {
+    $(this).addClass('active');
+    $('.inlines').fadeIn();
+    $('.inline-sup').fadeIn();
+  }, function () {
+    $(this).removeClass('active')
+    $('.inlines').fadeOut();
+    $('.inline-sup').fadeOut();
+  });
 
 });
 

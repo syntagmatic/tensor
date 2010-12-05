@@ -250,6 +250,51 @@ p {
   margin:18px 0 2px 0;
   border-bottom:1px solid #d3d3d3;
 }
+.entry a.inline-count {
+  position: absolute;
+  right: 32px;
+  color: #aaa;
+  outline: none;
+  font-size:11px;
+}
+.entry a.inline-count.active {
+  font-weight: bold;
+}
+.entry p:hover a.inline-count,
+.entry a.inline-count:hover,
+.entry a.inline-count.active {
+  color: #047;
+  text-decoration:none;
+}
+.inline-sup {
+  position:relative;
+  top:-4px;
+  font-size:10px;
+  font-weight:bold;
+  color: #047;
+  display: none;
+}
+.inlines {
+  color: #047;
+  font-weight:bold;
+  display: none;
+  padding:4px 12px 4px 28px;
+  margin: 0px 88px 0px 28px;
+  background: #ddd;
+  font-size:10px;
+  position:relative;
+  top:-1px;
+}
+.inlines li {
+  padding:3px 0;
+}
+.inlines li span {
+  position:relative;
+  top:1px;
+  font-size:14px;
+  font-weight:normal;
+  color: #333;
+}
 .left {
   float:left;
 }
@@ -392,19 +437,25 @@ header .inner p {
   width: 200%;
   position:relative;
 }
-#content:hover {
+#content .col:hover {
   cursor:-moz-grab;
 }
-#content:active {
+#content .col:active {
   cursor:-moz-grabbing;
 }
-#content .col {
+#content .col,
+#content .double-col {
   float:left;
   height: auto;
-  width:16.61%;
   position:relative;
   /* TEMPORARY */
   min-height: 770px;
+}
+#content .col {
+  width:16.61%;
+}
+#content .double-col {
+  width:33.32%;
 }
 .list {
   display:none;
@@ -545,12 +596,22 @@ header .inner p {
 #content .list .wave.selected:hover {
   cursor:auto;
 }
-.list .date, .list .author {
-  float:right;
+.list .date,
+.list .author {
+  position:absolute;
+  right:0px;
   color:#aaa;
   font-weight:normal;
 }
-.project:hover .date, .wave:hover .date, .wave:hover .author {
+.list .wave:hover .date,
+.list .wave:hover .author,
+.list .wave.selected .date,
+.list .wave.selected .author {
+  right:12px;
+}
+.project:hover .date,
+.wave:hover .date,
+.wave:hover .author {
   color: #333;
 }
 .list h4 {
@@ -563,10 +624,11 @@ header .inner p {
 
 #main .entry {
   font-size:14px;
-  padding:1px 28px 28px;
+  padding:1px 32px 28px;
 }
 #main .entry p {
   line-height:1.5em;
+  padding-right:60px;
 }
 #main .entry h1 {
   padding-right:220px;
