@@ -197,12 +197,12 @@ $(function() {
 
   $('.inline-count').toggle( function() {
     $(this).addClass('active');
-    $('.inlines').fadeIn();
-    $('.inline-sup').fadeIn();
+    id = $(this).attr('id');
+    $('.' + id).fadeIn();
   }, function () {
     $(this).removeClass('active')
-    $('.inlines').fadeOut();
-    $('.inline-sup').fadeOut();
+    id = $(this).attr('id');
+    $('.' + id).fadeOut();
   });
 
 });
